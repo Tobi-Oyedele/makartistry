@@ -3,7 +3,7 @@ import MobileNav from "./MobileNav";
 
 const NavBar = () => {
   return (
-    <div>
+    <header className="absolute top-0 left-0 z-30 w-full">
       <div className="md:hidden">
         <MobileNav />
       </div>
@@ -11,7 +11,7 @@ const NavBar = () => {
       <div className="hidden md:block">
         <DesktopNav />
       </div>
-    </div>
+    </header>
   );
 };
 
