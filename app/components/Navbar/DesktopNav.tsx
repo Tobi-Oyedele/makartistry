@@ -1,25 +1,60 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Search, UserRound, ShoppingCart } from "lucide-react";
 import NavDropdown from "./NavDropDown";
 
-export default function DesktopNav() {
+export default function Navbar() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
   return (
-    <nav className="hidden lg:flex items-center justify-between px-10 py-6 text-white">
-      {/* Left */}
+    <nav className="relative flex items-center justify-between px-8 py-4 text-white border-b">
+      {/* Logo */}
+      <Link href="/">
+        <Image src="/images/nav-logo.svg" alt="Logo" width={170} height={80} />
+      </Link>
+
+      {/* Links */}
       <div className="flex gap-8">
         <NavDropdown
           label="Shop"
-          links={["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"]}
+          links={[
+            { label: "Link 1", href: "/shop/link-1" },
+            { label: "Link 2", href: "/shop/link-2" },
+            { label: "Link 3", href: "/shop/link-3" },
+          ]}
+          isOpen={openDropdown === "Shop"}
+          onToggle={() =>
+            setOpenDropdown(openDropdown === "Shop" ? null : "Shop")
+          }
+          onClose={() => setOpenDropdown(null)}
         />
-        <a href="/inspired">Get Inspired</a>
+
+        <Link href="/inspired">Get Inspired</Link>
+
         <NavDropdown
           label="About Us"
-          links={["Our Story", "Inside Our Mind", "FAQ", "Contact Us"]}
+          links={[
+            { label: "Our Story", href: "/our-story" },
+            { label: "Inside Our Mind", href: "/inside-our-mind" },
+            { label: "FAQ", href: "/faq" },
+            { label: "Contact Us", href: "/contact-us" },
+          ]}
+          isOpen={openDropdown === "About Us"}
+          onToggle={() =>
+            setOpenDropdown(openDropdown === "About Us" ? null : "About Us")
+          }
+          onClose={() => setOpenDropdown(null)}
         />
       </div>
 
-      {/* Right */}
+      {/* Icons */}
       <div className="flex items-center gap-6">
-        <button>User</button>
-        <button>Cart</button>
+        <Search className="h-5 w-5 cursor-pointer" />
+        <UserRound className="h-5 w-5 cursor-pointer" />
+        <ShoppingCart className="h-5 w-5 cursor-pointer" />
       </div>
     </nav>
   );

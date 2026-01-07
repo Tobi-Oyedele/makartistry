@@ -2,7 +2,7 @@ import Hero from "./components/hero/Hero";
 
 const page = () => {
   return (
-    <div className="bg-red-700">
+    <div>
       <Hero />
     </div>
   );

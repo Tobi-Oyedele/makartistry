@@ -1,6 +1,5 @@
 // components/hero/Hero.tsx
 import HeroCarousel from "./HeroCarousel";
-import ScrollIndicator from "./ScrollIndicator";
 import Navbar from "../Navbar/NavBar";
 
 export default function Hero() {
@@ -11,9 +10,6 @@ export default function Hero() {
 
       {/* Overlay content */}
       <Navbar />
-
-      {/* Scroll indicator */}
-      <ScrollIndicator />
     </section>
   );
 }
