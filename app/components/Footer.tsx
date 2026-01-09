@@ -155,7 +155,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-6 lg:col-span-3 lg:grid-cols-3 lg:max-w-2xl">
             {/* Browse Section */}
             <div className="flex flex-col items-start gap-2 flex-initial w-full">
-              <h2 className="mb-0 md:mb-2 xl:mb-4 font-semibold text-base md:text-lg text-champagne uppercase">
+              <h2 className="mb-0 md:mb-2 xl:mb-4 text-base md:text-lg text-champagne uppercase">
                 Browse
               </h2>
               <ul className="flex flex-col text-secondary font-normal gap-1.5 text-xs md:text-sm">
@@ -182,7 +182,7 @@ const Footer = () => {
 
             {/* Contact Section */}
             <div className="flex flex-col items-start gap-2 flex-initial">
-              <h2 className="mb-0 md:mb-2 xl:mb-4 font-semibold text-base md:text-lg text-champagne uppercase">
+              <h2 className="mb-0 md:mb-2 xl:mb-4 text-base md:text-lg text-champagne uppercase">
                 Contact Us
               </h2>
               <div className="flex flex-col gap-2 font-normal text-xs md:text-sm">
@@ -225,7 +225,7 @@ const Footer = () => {
 
             {/* Shop Section */}
             <div className="flex flex-col items-start gap-2 w-full">
-              <h2 className="mb-0 md:mb-2 xl:mb-4 font-semibold text-base md:text-lg text-champagne uppercase">
+              <h2 className="mb-0 md:mb-2 text-base md:text-lg text-champagne uppercase">
                 Shop
               </h2>
               <ul className="flex flex-col text-secondary font-normal gap-1.5 text-xs md:text-sm">

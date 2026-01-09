@@ -6,11 +6,15 @@ import Image from "next/image";
 import { Search, UserRound, ShoppingCart } from "lucide-react";
 import NavDropdown from "./NavDropDown";
 
-export default function Navbar() {
+export default function Navbar({ isScrolled }: { isScrolled: boolean }) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="relative flex items-center justify-between px-8 py-4 text-white border-b">
+    <nav
+      className={`relative flex items-center justify-between px-8 py-3 text-white ${
+        isScrolled ? "bg-white/10 backdrop-blur-md shadow-lg" : "border-b"
+      }`}
+    >
       {/* Logo */}
       <Link href="/">
         <Image src="/images/nav-logo.svg" alt="Logo" width={170} height={80} />

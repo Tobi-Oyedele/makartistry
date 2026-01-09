@@ -6,12 +6,16 @@ import { UserRound, Search, Menu, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function MobileNav() {
+export default function MobileNav({ isScrolled }: { isScrolled: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <nav className="flex justify-between items-center px-6 py-5 text-white">
+      <nav
+        className={`flex justify-between items-center px-6 py-5 text-white ${
+          isScrolled ? "bg-white/10 backdrop-blur-md shadow-lg" : "border-b"
+        }`}
+      >
         {/* Left */}
         <div className="flex items-center gap-6">
           <button
