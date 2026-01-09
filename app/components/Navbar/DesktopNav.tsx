@@ -32,7 +32,7 @@ export default function Navbar() {
           onClose={() => setOpenDropdown(null)}
         />
 
-        <Link href="/inspired">Get Inspired</Link>
+        <Link href="/get-inspired">Get Inspired</Link>
 
         <NavDropdown
           label="About Us"

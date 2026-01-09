@@ -1,5 +1,5 @@
 const page = () => {
-  return <div>Inside our mind</div>;
+  return <div className="min-h-screen">Inside our mind</div>;
 };
 
 export default page;

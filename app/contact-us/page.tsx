@@ -1,5 +1,5 @@
 const page = () => {
-  return <div>Contact Us</div>;
+  return <div className="min-h-screen">Contact Us</div>;
 };
 
 export default page;
