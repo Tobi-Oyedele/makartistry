@@ -19,7 +19,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative w-full h-[75vh] overflow-hidden ">
+    <div className="relative w-full h-[75vh] overflow-hidden">
       {images.map((img, i) => (
         <Image
           key={img}
@@ -33,6 +33,9 @@ export default function HeroCarousel() {
           sizes="100vw"
         />
       ))}
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
     </div>
   );
 }

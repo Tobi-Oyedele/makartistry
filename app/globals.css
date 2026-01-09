@@ -12,4 +12,27 @@
   --color-warning: #f59e0b;
   --color-error: #ed3030;
   --color-gray4: #bdbdbd;
+
+  --font-heading: var(--font-chillax);
+  --font-body: var(--font-synonym);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+
+  button,
+  nav {
+    font-family: var(--font-body);
+  }
 }
