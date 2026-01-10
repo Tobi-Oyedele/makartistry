@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/Navbar/NavBar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 import { chillax, synonym } from "./fonts";
 
 export const metadata: Metadata = {
