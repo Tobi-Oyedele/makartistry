@@ -36,7 +36,7 @@ export default function Navbar({ isScrolled }: { isScrolled: boolean }) {
           onClose={() => setOpenDropdown(null)}
         />
 
-        <Link href="/get-inspired" className="uppercase">
+        <Link href="/get-inspired" className="uppercase text-sm">
           Get Inspired
         </Link>
 
@@ -56,11 +56,18 @@ export default function Navbar({ isScrolled }: { isScrolled: boolean }) {
         />
       </div>
 
-      {/* Icons */}
       <div className="flex items-center gap-6">
-        <Search className="h-5 w-5 cursor-pointer" />
-        <UserRound className="h-5 w-5 cursor-pointer" />
-        <ShoppingCart className="h-5 w-5 cursor-pointer" />
+        <button aria-label="Search">
+          <Search className="h-5 w-5 cursor-pointer" />
+        </button>
+
+        <button>
+          <UserRound className="h-5 w-5 cursor-pointer" />
+        </button>
+
+        <button aria-label="Shopping cart">
+          <ShoppingCart className="h-5 w-5 cursor-pointer" />
+        </button>
       </div>
     </nav>
   );

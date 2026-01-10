@@ -1,8 +1,9 @@
 import { Copyright } from "lucide-react";
+import Link from "next/link";
 
 const FooterBottomBar = () => {
   return (
-    <div className="flex w-full h-16 bg-champagne px-8 items-center">
+    <div className="flex w-full h-16 bg-secondary px-8 items-center">
       <div className="flex justify-between w-full text-xs md:text-sm">
         <div className="flex gap-2 items-center">
           <Copyright className="w-4" />
@@ -10,14 +11,14 @@ const FooterBottomBar = () => {
         </div>
 
         <ul className="flex gap-4">
-          <li>
-            <a href="/privacy-policy">Privacy Policy</a>
+          <li className="cursor-pointer">
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </li>
           <li>
-            <a href="/shipping-policy">Shipping Policy</a>
+            <Link href="/shipping-policy">Shipping Policy</Link>
           </li>
           <li>
-            <a href="/terms-of-service">Terms of Use</a>
+            <Link href="/terms-of-service">Terms of Use</Link>
           </li>
         </ul>
       </div>

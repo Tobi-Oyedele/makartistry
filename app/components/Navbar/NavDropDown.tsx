@@ -49,7 +49,7 @@ export default function NavDropdown({
             onToggle();
           }
         }}
-        className="flex items-center gap-1 uppercase cursor-pointer"
+        className="flex items-center gap-1 uppercase text-sm cursor-pointer"
       >
         {label}
         <ChevronDown
