@@ -49,7 +49,7 @@ export default function NavDropdown({
             onToggle();
           }
         }}
-        className="flex items-center gap-1 uppercase"
+        className="flex items-center gap-1 uppercase cursor-pointer"
       >
         {label}
         <ChevronDown
@@ -63,20 +63,13 @@ export default function NavDropdown({
       {isOpen && (
         <div
           onClick={(e) => e.stopPropagation()}
-          className="
-            absolute left-0 top-full
-            mt-6
-            rounded-b-xl
-            bg-white/90 backdrop-blur-lg
-            uppercase text-black
-            p-4 shadow-lg
-          "
+          className="absolute left-0 top-full mt-5 rounded-b-xl bg-white/90 backdrop-blur-lg text-eerie-black p-3 shadow-lg"
         >
           {links.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="block py-1 hover:opacity-70"
+              className="block py-1 text-sm hover:opacity-70"
               onClick={onClose}
             >
               {link.label}

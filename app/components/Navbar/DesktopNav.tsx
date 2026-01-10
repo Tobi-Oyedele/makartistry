@@ -36,7 +36,7 @@ export default function Navbar({ isScrolled }: { isScrolled: boolean }) {
           onClose={() => setOpenDropdown(null)}
         />
 
-        <Link href="/get-inspired" className="uppercase font-body">
+        <Link href="/get-inspired" className="uppercase">
           Get Inspired
         </Link>
 
