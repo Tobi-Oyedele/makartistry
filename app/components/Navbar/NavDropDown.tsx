@@ -10,7 +10,12 @@ type NavDropdownProps = {
   isOpen: boolean;
   onToggle: () => void;
   onClose: () => void;
+  isDark?: boolean; // <-- NEW: true when scrolled (dark text theme)
 };
+
+function cn(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function NavDropdown({
   label,
@@ -18,10 +23,10 @@ export default function NavDropdown({
   isOpen,
   onToggle,
   onClose,
+  isDark = false,
 }: NavDropdownProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  // Close when clicking outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -29,13 +34,11 @@ export default function NavDropdown({
       }
     }
 
-    // Only add listener when dropdown is open
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
+    if (isOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClose, isOpen]);
+
+  const triggerHover = isDark ? "hover:text-black/70" : "hover:text-white/80";
 
   return (
     <div ref={ref} className="relative">
@@ -49,13 +52,17 @@ export default function NavDropdown({
             onToggle();
           }
         }}
-        className="flex items-center gap-1 uppercase text-sm cursor-pointer"
+        className={cn(
+          "flex items-center gap-1 uppercase text-sm cursor-pointer transition-colors duration-200",
+          triggerHover
+        )}
       >
         {label}
         <ChevronDown
-          className={`h-4 w-4 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
+          className={cn(
+            "h-4 w-4 transition-transform duration-200",
+            isOpen && "rotate-180"
+          )}
         />
       </button>
 
@@ -63,14 +70,24 @@ export default function NavDropdown({
       {isOpen && (
         <div
           onClick={(e) => e.stopPropagation()}
-          className="absolute left-0 top-full mt-5 rounded-b-xl bg-white/90 backdrop-blur-lg text-eerie-black p-3 shadow-lg"
+          className={cn(
+            "absolute left-0 top-full mt-4 w-56 rounded-xl p-2 shadow-lg",
+            "backdrop-blur-xl border",
+            // Panel styling
+            isDark
+              ? "bg-white/90 text-eerie-black border-black/10"
+              : "bg-white/95 text-eerie-black border-black/10"
+          )}
         >
           {links.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="block py-1 text-sm hover:opacity-70"
               onClick={onClose}
+              className={cn(
+                "block rounded-lg px-3 py-2 text-sm transition",
+                "hover:bg-black/5"
+              )}
             >
               {link.label}
             </Link>

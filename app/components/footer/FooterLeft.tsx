@@ -18,7 +18,7 @@ const FooterLeft = () => {
     <div className="flex flex-col items-start gap-4 lg:max-w-md">
       <Link href="/">
         <Image
-          src="/images/nav-logo.svg"
+          src="/images/home/nav-logo.svg"
           alt="Mak Artistry logo"
           width={200}
           height={40}

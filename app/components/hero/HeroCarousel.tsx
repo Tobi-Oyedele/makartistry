@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/images/default-slide-1.png",
-  "/images/default-slide-2.png",
-  "/images/default-slide-3.webp",
+  "/images/home/default-slide-1.png",
+  "/images/home/default-slide-2.png",
+  "/images/home/default-slide-3.webp",
 ];
 
 export default function HeroCarousel() {
